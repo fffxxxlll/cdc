@@ -19,5 +19,33 @@ cdc的学习
 
 
 
-# 待完成
+
+
+### 下列操作在上述过程中改变了mysql表结构，加入了时间戳，主键，分区字段
+
+由于对流处理的api还不熟悉，选择使用了更易用的SQL table api
+
+执行生产者，并向mysql插入数据。
+
+![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/%E7%94%9F%E4%BA%A7.png)
+
+
+
+提交消费者作业，使用存储过程插入80w条数据。
+
+
+
+![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/%E6%B6%88%E8%B4%B9%E8%80%85%E4%BD%9C%E4%B8%9A.png)
+
+
+
+然后hdfs上显示hudi目录
+
+![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hudi_log2.png)
+
+![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hudi_log.png)
+
+
+
+
 
