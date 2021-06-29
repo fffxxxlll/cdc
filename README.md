@@ -35,13 +35,13 @@ cdc的学习
 
 
 
-![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/%E6%B6%88%E8%B4%B9%E8%80%85%E4%BD%9C%E4%B8%9A.png)
+![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/consumer.png)
 
 
 
 然后hdfs上显示hudi目录
 
-![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hudi_log2.png)
+![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hud.png)
 
 ![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hudi_log.png)
 
