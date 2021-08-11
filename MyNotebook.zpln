@@ -1,0 +1,172 @@
+﻿{
+ "paragraphs": [
+  {
+   "text": "%flink.ssql(type=update)\nDROP TABLE IF EXISTS mysql_source;\nCREATE TABLE mysql_source (\n    id INTEGER,\n    name STRING,\n    `description` STRING,\n    weight DECIMAL,\n    ts TIMESTAMP,\n    part STRING\n) WITH (\n    'connector' = 'jdbc',\n    'url' = 'jdbc:mysql://hadoop01:3306/flink_cdc',\n    'table-name' = 'test_cdc',\n    'username' = 'root',\n    'password' = '123456'\n);\n\nSELECT * FROM mysql_source;\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-08-10T22:25:26+0800",
+   "progress": 0.0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {
+     "0": {
+      "graph": {}
+     }
+    },
+    "enabled": true
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "size": {
+        "height": 74.0
+       },
+       "state": {}
+      }
+     }
+    },
+    "forms": {}
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "FLINK JOB",
+     "tooltip": "View in Flink web UI",
+     "group": "flink",
+     "values": [
+      {
+       "jobUrl": "http://hadoop01:8081#/job/63be8d94cf0342be5a745e609cda09ce"
+      }
+     ],
+     "interpreterSettingId": "flink"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1628605526613_136436378",
+   "id": "paragraph_1628605526613_136436378",
+   "dateCreated": "2021-08-10T22:25:26+0800",
+   "dateStarted": "2021-08-10T22:25:26+0800",
+   "dateFinished": "2021-08-10T22:25:31+0800",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%flink.ssql(type=update, parallelism=1)\nDROP TABLE IF EXISTS csv_info;\nCREATE TABLE csv_info (\n    agent_timestamp   bigint,\n    ts AS TO_TIMESTAMP(FROM_UNIXTIME(agent_timestamp / 1000, 'yyyy-MM-dd HH:mm:ss'))\n) WITH (\n    'connector' = 'filesystem',\n    'path' = '/root/unlayer_20210601',\n    'format' = 'orc'\n);\nSELECT * FROM csv_info LIMIT 10;\n",
+   "user": "anonymous",
+   "dateUpdated": "2021-08-10T23:35:08+0800",
+   "progress": 0.0,
+   "config": {
+    "results": [
+     {}
+    ]
+   },
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "state": {
+        "currentPage": "Table",
+        "chart": {
+         "series": [
+          {
+           "type": "Pie",
+           "values": {
+            "column": "agent_timestamp",
+            "index": 0.0
+           },
+           "labels": {
+            "column": "ts",
+            "index": 1.0
+           },
+           "showPercents": true
+          }
+         ]
+        }
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TABLE",
+      "data": "agent_timestamp\tts\n1622519678344\t2021-06-01T11:54:38\n1622519690370\t2021-06-01T11:54:50\n1622526564524\t2021-06-01T13:49:24\n1622526583389\t2021-06-01T13:49:43\n1622526595786\t2021-06-01T13:49:55\n1622535956160\t2021-06-01T16:25:56\n1622541346447\t2021-06-01T17:55:46\n1622541365808\t2021-06-01T17:56:05\n1622541381389\t2021-06-01T17:56:21\n1622548494678\t2021-06-01T19:54:54\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {
+    "jobUrl": {
+     "propertyName": "jobUrl",
+     "label": "FLINK JOB",
+     "tooltip": "View in Flink web UI",
+     "group": "flink",
+     "values": [
+      {
+       "jobUrl": "http://hadoop01:8081#/job/e2d3721fbbb07fd57af8fd9133489270"
+      }
+     ],
+     "interpreterSettingId": "flink"
+    }
+   },
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1628609707965_1732085019",
+   "id": "paragraph_1628609707965_1732085019",
+   "dateCreated": "2021-08-10T23:35:07+0800",
+   "dateStarted": "2021-08-10T23:35:08+0800",
+   "dateFinished": "2021-08-10T23:35:18+0800",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%flink.ssql(type=update, parallelism=1)\nSHOW DATABASES;",
+   "user": "anonymous",
+   "dateUpdated": "2021-08-11T10:43:45+0800",
+   "progress": 0.0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TABLE",
+      "data": "database\ndefault_database\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500.0,
+   "jobName": "paragraph_1628649825086_285555272",
+   "id": "paragraph_1628649825086_285555272",
+   "dateCreated": "2021-08-11T10:43:45+0800",
+   "dateStarted": "2021-08-11T10:43:45+0800",
+   "dateFinished": "2021-08-11T10:43:46+0800",
+   "status": "FINISHED"
+  }
+ ],
+ "name": "Zeppelin Notebook",
+ "id": "2GEBU1W9V",
+ "noteParams": {},
+ "noteForms": {},
+ "angularObjects": {},
+ "config": {
+  "isZeppelinNotebookCronEnable": false,
+  "looknfeel": "default",
+  "personalizedMode": "false"
+ },
+ "info": {}
+}
