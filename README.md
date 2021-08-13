@@ -27,7 +27,7 @@ cdc的学习
 
 执行生产者，并向mysql插入数据。
 
-![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/%E7%94%9F%E4%BA%A7.png)
+![](http://qx61v1g4z.hn-bkt.clouddn.com//8.13/console.png)
 
 
 
@@ -35,15 +35,13 @@ cdc的学习
 
 
 
-![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/consumer.png)
+![](http://qx61v1g4z.hn-bkt.clouddn.com//8.13/dashboard.png)
 
 
 
 然后hdfs上显示hudi目录
 
-![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hud.png)
-
-![](http://quxjj6jyh.hn-bkt.clouddn.com/2021.6.30/hudi_log.png)
+![](http://qx61v1g4z.hn-bkt.clouddn.com//8.13/fs.png)
 
 
 
